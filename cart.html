@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина — softbloomy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Дополнительные стили для пустой корзины */
+        .empty-cart-container {
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .empty-cart-box {
+            text-align: center;
+            padding: 40px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .empty-cart-box svg {
+            width: 80px;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+        .empty-cart-box p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #666;
+        }
+        .empty-cart-box .btn-primary {
+            display: inline-block;
+            background: #2db897;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+        }
+        .empty-cart-box .btn-primary:hover {
+            background: #1e8a72;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8">
+                <path d="M12 22V12"/>
+                <path d="M12 12C12 7 8 4 5 6c0 4 3 6 7 6z"/>
+                <path d="M12 12C12 7 16 4 19 6c0 4-3 6-7 6z"/>
+                <path d="M12 12C12 9 10 7 9 8c0 3 1.5 4 3 4z"/>
+                <path d="M12 12C12 9 14 7 15 8c0 3-1.5 4-3 4z"/>
+            </svg>
+            softbloomy
+        </a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="catalog.html">Каталог</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="clients.html">Клиентам</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+    </ul>
+    <div class="cart-link">
+        <a href="cart.html">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                <circle cx="9" cy="21" r="1"/>
+                <circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+            </svg>
+            <span class="cart-count">0</span>
+        </a>
+    </div>
+    <div class="burger">
+        <span></span><span></span><span></span>
+    </div>
+</header>
+
+<div class="mobile-menu">
+    <a href="catalog.html">Каталог</a>
+    <a href="about.html">О нас</a>
+    <a href="clients.html">Клиентам</a>
+    <a href="contacts.html">Контакты</a>
+</div>
+
+<main>
+    <div class="container">
+        <h1 class="section-title">Корзина</h1>
+        
+        <!-- ПУСТАЯ КОРЗИНА (отдельный блок без наложений) -->
+        <div id="cart-empty" style="display: none;">
+            <div class="empty-cart-container">
+                <div class="empty-cart-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="9" cy="21" r="1"/>
+                        <circle cx="20" cy="21" r="1"/>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                    </svg>
+                    <p>Корзина пуста</p>
+                    <a href="catalog.html" class="btn-primary">Перейти в каталог</a>
+                </div>
+            </div>
+        </div>
+        <!-- ПОЛНАЯ КОРЗИНА -->
+        <div id="cart-list">
+            <div class="cart-page">
+                <div id="cart-items"></div>
+                
+                <aside class="cart-summary">
+                    <h3>Ваш заказ</h3>
+                    <div class="summary-row">
+                        <span id="cart-count-label">товары, 0 шт</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Итого</span>
+                        <span id="summary-total">0,00 BYN</span>
+                    </div>
+                    
+                    <div class="order-form">
+                        <div class="form-group">
+                            <label>Ваше имя *</label>
+                            <input type="text" id="customer-name" placeholder="Введите ваше имя">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Город *</label>
+                            <div class="city-row">
+                                <select id="city-select">
+                                    <option value="">Выберите город</option>
+                                    <option value="Минск">Минск</option>
+                                    <option value="Гомель">Гомель</option>
+                                    <option value="Могилёв">Могилёв</option>
+                                    <option value="Витебск">Витебск</option>
+                                    <option value="Гродно">Гродно</option>
+                                    <option value="Брест">Брест</option>
+                                    <option value="Бобруйск">Бобруйск</option>
+                                    <option value="Борисов">Борисов</option>
+                                    <option value="Солигорск">Солигорск</option>
+                                    <option value="Молодечно">Молодечно</option>
+                                </select>
+                                <button class="btn-select-city" id="confirm-city-btn">OK</button>
+                            </div>
+                            <div id="selected-city-display" class="selected-city" style="display: none;"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Адрес доставки</label>
+                            <input type="text" id="delivery-address" placeholder="Улица, дом, квартира">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Телефон</label>
+                            <input type="tel" id="customer-phone" placeholder="+375 (XX) XXX-XX-XX">
+                        </div>
+                    </div>
+                    
+                    <button id="order-btn" class="btn-order">Оформить заказ</button>
+                </aside>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <div>softbloomy</div>
+            <div class="footer-links">
+                <a href="about.html">О нас</a>
+                <a href="clients.html">Клиентам</a>
+                <a href="contacts.html">Контакты</a>
+            </div>
+            <div>© 2026 softbloomy</div>
+        </div>
+    </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

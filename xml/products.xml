@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+  <categories>
+    <category id="eye-makeup" name="Макияж глаз">
+      <subcategories>
+        <subcategory id="eyeshadow" name="тени"/>
+        <subcategory id="mascara" name="тушь"/>
+      </subcategories>
+    </category>
+    <category id="face-makeup" name="Макияж лица">
+      <subcategories>
+        <subcategory id="foundation" name="тональный крем"/>
+        <subcategory id="blush" name="румяна"/>
+      </subcategories>
+    </category>
+    <category id="lip-makeup" name="Макияж губ">
+      <subcategories>
+        <subcategory id="gloss" name="блеск"/>
+        <subcategory id="lipstick" name="помада"/>
+      </subcategories>
+    </category>
+  </categories>
+
+  <products>
+    <product id="1" category="eye-makeup" subcategory="eyeshadow" featured="true">
+      <name>NATASHA DENONA GOLDEN</name>
+      <type>палетка теней для век</type>
+      <price>268.48</price>
+      <currency>BYN</currency>
+      <specs>
+        <spec name="тип продукта">палетка для глаз</spec>
+        <spec name="финиш">матовый, сияющий</spec>
+        <spec name="текстура">твердая</spec>
+      </specs>
+      <image>assets/img/natasha-denona.jpg</image>
+      <color>#f4c2a1</color>
+    </product>
+
+    <product id="2" category="lip-makeup" subcategory="gloss" featured="true">
+      <name>BRAYE MELTING LIPSWEET</name>
+      <type>бальзам для губ</type>
+      <price>59.98</price>
+      <currency>BYN</currency>
+      <specs>
+        <spec name="тип продукта">бальзам-блеск</spec>
+        <spec name="финиш">сияющий</spec>
+        <spec name="текстура">жидкая</spec>
+      </specs>
+      <image>assets/img/braye.jpg</image>
+      <color>#e8a0b4</color>
+    </product>
+
+    <product id="3" category="lip-makeup" subcategory="lipstick" featured="true">
+      <name>MAX FACTOR Colour Elixir Soft</name>
+      <type>губная помада</type>
+      <price>42.04</price>
+      <currency>BYN</currency>
+      <specs>
+        <spec name="тип продукта">помада</spec>
+        <spec name="финиш">сатиновый</spec>
+        <spec name="текстура">кремовая</spec>
+      </specs>
+      <image>assets/img/maxfactor.jpg</image>
+      <color>#c47a8a</color>
+    </product>
+
+    <product id="4" category="face-makeup" subcategory="foundation" featured="true">
+      <name>Missha Magic Cushion Cover Lasting</name>
+      <type>кушон</type>
+      <price>78.48</price>
+      <currency>BYN</currency>
+      <specs>
+        <spec name="тип продукта">кушон</spec>
+        <spec name="финиш">натуральный</spec>
+        <spec name="текстура">жидкая</spec>
+      </specs>
+      <image>assets/img/cover-cushion.jpg</image>
+      <color>#d4a88a</color>
+    </product>
+
+    <product id="5" category="eye-makeup" subcategory="eyeshadow" featured="true">
+      <name>TOM FORD Eye Color Quad</name>
+      <type>палетка теней для век</type>
+      <price>326.78</price>
+      <currency>BYN</currency>
+      <specs>
+        <spec name="тип продукта">палетка для глаз</spec>
+        <spec name="финиш">матовый, шиммер</spec>
+        <spec name="текстура">твердая</spec>
+      </specs>
+      <image>assets/img/tomford.jpg</image>
+      <color>#9b7553</color>
+    </product>
+
+    <product id="6" category="eye-makeup" subcategory="mascara" featured="true">
+      <name>LUXVISAGE Mascara Brown</name>
+      <type>тушь для ресниц</type>
+      <price>42.04</price>
+      <currency>BYN</currency>
+      <specs>
+        <spec name="тип продукта">тушь</spec>
+        <spec name="финиш">матовый</spec>
+        <spec name="текстура">кремовая</spec>
+      </specs>
+      <image>assets/img/luxvisage.jpg</image>
+      <color>#5c3a2a</color>
+    </product>
+
+    <product id="7" category="eye-makeup" subcategory="eyeshadow" featured="false">
+      <name>CATRICE The Pure Nude</name>
+      <type>палетка теней для век</type>
+      <price>25.60</price>
+      <currency>BYN</currency>
+      <specs>
+        <spec name="тип продукта">палетка для глаз</spec>
+        <spec name="финиш">матовый</spec>
+        <spec name="текстура">твердая</spec>
+      </specs>
+      <image>assets/img/catrice.jpg</image>
+      <color>#c8ab90</color>
+    </product>
+
+    <product id="8" category="eye-makeup" subcategory="eyeshadow" featured="false">
+      <name>ART-VISAGE Nude Universe</name>
+      <type>палетка теней для век</type>
+      <price>58.43</price>
+      <currency>BYN</currency>
+      <specs>
+        <spec name="тип продукта">палетка для глаз</spec>
+        <spec name="финиш">матовый, сияющий</spec>
+        <spec name="текстура">твердая</spec>
+      </specs>
+      <image>assets/img/artvisage.jpg</image>
+      <color>#c4aa88</color>
+    </product>
+
+    <product id="9" category="face-makeup" subcategory="blush" featured="false">
+      <name>NARS Blush Orgasm</name>
+      <type>румяна</type>
+      <price>89.90</price>
+      <currency>BYN</currency>
+      <specs>
+        <spec name="тип продукта">румяна</spec>
+        <spec name="финиш">сатиновый с шиммером</spec>
+        <spec name="текстура">спрессованная пудра</spec>
+      </specs>
+      <image>assets/img/nars-blush.jpg</image>
+      <color>#f7a1a1</color>
+    </product>
+  </products>
+</catalog>
