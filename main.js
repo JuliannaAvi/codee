@@ -389,6 +389,25 @@ async function initCart() {
         });
     }
     
+    // Функция очистки формы заказа
+    function clearOrderForm() {
+        if (customerName) customerName.value = '';
+        if (citySelect) {
+            citySelect.value = '';
+            citySelect.style.display = 'block';
+        }
+        if (selectedCityDisplay) {
+            selectedCityDisplay.textContent = '';
+            selectedCityDisplay.style.display = 'none';
+        }
+        if (confirmCityBtn) confirmCityBtn.style.display = 'flex';
+        if (deliveryAddress) deliveryAddress.value = '';
+        if (customerPhone) customerPhone.value = '';
+        
+        // Удаляем сохранённые данные заказа
+        localStorage.removeItem('softbloomy_last_order');
+    }
+    
     function renderCart() {
         if (!cartItemsDiv) return;
         
@@ -469,13 +488,35 @@ async function initCart() {
             const address = deliveryAddress?.value || 'Не указан';
             const phone = customerPhone?.value || 'Не указан';
             
-            localStorage.setItem('softbloomy_last_order', JSON.stringify({ name, city, address, phone, date: new Date().toLocaleString() }));
+            // Формируем детали заказа для консоли
+            console.log('==================== НОВЫЙ ЗАКАЗ ====================');
+            console.log('Покупатель:', name);
+            console.log('Город:', city);
+            console.log('Адрес:', address);
+            console.log('Телефон:', phone);
+            console.log('Дата:', new Date().toLocaleString());
+            console.log('Товары:');
+            cart.forEach(item => {
+                const product = allProducts.find(p => p.id === item.id);
+                if (product) {
+                    console.log(` - ${product.name} x${item.qty} = ${(product.price * item.qty).toFixed(2)} ${product.currency}`);
+                }
+            });
+            console.log('Итого:', getCartTotal().toFixed(2), 'BYN');
+            console.log('===================================================');
             
-            showToast('Заказ оформлен! Спасибо за покупку!');
-            
+            // Очищаем корзину
             cart = [];
             saveCart();
+            
+            // Очищаем форму заказа
+            clearOrderForm();
+            
+            // Перерисовываем корзину
             renderCart();
+            
+            // Показываем сообщение об успехе
+            showToast('Заказ оформлен! Спасибо за покупку!');
         });
     }
     
